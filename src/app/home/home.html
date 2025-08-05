@@ -1,0 +1,23 @@
+<p>home works!</p>
+<button class="bg-primary" id="btn" (click)="showTrackTicketData($event)">
+  get data
+</button>
+<!--data-->
+<div *ngIf="ticketData.length > 0">
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of ticketData">
+        <td>{{ user.name }}</td>
+        <td>{{ user.language }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="ticketError" class="text-danger">{{ ticketError }}</div>
